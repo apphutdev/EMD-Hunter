@@ -509,14 +509,21 @@ def generate_mock_serp(keyword: str) -> List[dict]:
 
 # ============== AI ANALYSIS ENDPOINT ==============
 
+class AIAnalysisRequest(BaseModel):
+    keyword: str
+    serp_data: List[dict]
+    keyword_data: dict
+
 @api_router.post("/ai/analyze")
 async def ai_analyze_opportunity(
-    keyword: str,
-    serp_data: List[dict],
-    keyword_data: dict,
+    request: AIAnalysisRequest,
     current_user: dict = Depends(get_current_user)
 ):
     """Use Claude AI to analyze EMD opportunity."""
+    keyword = request.keyword
+    serp_data = request.serp_data
+    keyword_data = request.keyword_data
+    
     if not EMERGENT_LLM_KEY:
         return {"analysis": "AI analysis not available. Please configure EMERGENT_LLM_KEY.", "source": "mock"}
     
