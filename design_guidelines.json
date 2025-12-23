@@ -1,0 +1,147 @@
+{
+  "design_system": {
+    "identity": {
+      "name": "EMD Hunter",
+      "archetype": "Electric & Neon",
+      "vibe": "Cyberpunk Analyst, Aggressive, High-Precision",
+      "emotional_tone": "You are a hacker finding glitches in the matrix. The tool is your weapon."
+    },
+    "typography": {
+      "font_family": {
+        "headings": "Unbounded, sans-serif",
+        "body": "Manrope, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "imports": [
+        "https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      ],
+      "scale": {
+        "h1": "text-5xl md:text-7xl font-bold tracking-tighter",
+        "h2": "text-3xl md:text-5xl font-semibold tracking-tight",
+        "h3": "text-2xl font-medium tracking-wide",
+        "body": "text-base leading-relaxed text-muted-foreground",
+        "mono": "text-sm font-mono tracking-tight text-accent-foreground"
+      }
+    },
+    "colors": {
+      "palette": {
+        "background": "#030304",
+        "surface": "#0A0A0B",
+        "surface_highlight": "#121214",
+        "border": "#1F1F22",
+        "primary": "#00FF94",
+        "primary_dim": "rgba(0, 255, 148, 0.1)",
+        "secondary": "#00E0FF",
+        "destructive": "#FF0055",
+        "text_main": "#EDEDED",
+        "text_muted": "#888888"
+      },
+      "tailwind_config": {
+        "background": "0 0% 1%",
+        "foreground": "0 0% 93%",
+        "card": "240 4% 4%",
+        "card-foreground": "0 0% 93%",
+        "popover": "240 4% 4%",
+        "popover-foreground": "0 0% 93%",
+        "primary": "155 100% 50%",
+        "primary-foreground": "240 4% 4%",
+        "secondary": "187 100% 50%",
+        "secondary-foreground": "240 4% 4%",
+        "muted": "240 4% 10%",
+        "muted-foreground": "240 5% 65%",
+        "accent": "240 4% 10%",
+        "accent-foreground": "0 0% 98%",
+        "destructive": "340 100% 50%",
+        "destructive-foreground": "0 0% 98%",
+        "border": "240 4% 12%",
+        "input": "240 4% 12%",
+        "ring": "155 100% 50%"
+      }
+    },
+    "visual_enhancers": {
+      "borders": "1px solid rgba(255,255,255,0.08)",
+      "glassmorphism": "backdrop-blur-xl bg-black/40 border border-white/10",
+      "shadows": {
+        "neon_glow": "0 0 20px rgba(0, 255, 148, 0.3)",
+        "card_hover": "0 0 0 1px rgba(255,255,255,0.1), 0 4px 20px rgba(0,0,0,0.5)"
+      },
+      "radius": {
+        "default": "rounded-sm",
+        "button": "rounded-md",
+        "card": "rounded-lg"
+      }
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-primary text-black font-bold hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(0,255,148,0.4)] transition-all duration-300",
+      "secondary": "bg-secondary/10 text-secondary border border-secondary/20 hover:bg-secondary/20",
+      "ghost": "hover:bg-white/5 text-muted-foreground hover:text-white"
+    },
+    "cards": {
+      "base": "bg-card border border-border/50 hover:border-primary/30 transition-colors duration-300",
+      "glass": "bg-black/40 backdrop-blur-md border border-white/5"
+    },
+    "inputs": {
+      "style": "bg-black/20 border-border focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all h-12"
+    },
+    "kill_score": {
+      "description": "A circular gauge or progress bar indicating opportunity strength.",
+      "colors": {
+        "low": "#FF0055",
+        "medium": "#FFD600",
+        "high": "#00FF94"
+      }
+    }
+  },
+  "layout_strategy": {
+    "dashboard": {
+      "type": "Bento Grid (Mode B)",
+      "grid_cols": "grid-cols-1 md:grid-cols-4 lg:grid-cols-12",
+      "gap": "gap-4",
+      "padding": "p-6"
+    },
+    "landing": {
+      "type": "Asymmetrical / Tetris (Mode A)",
+      "hero_alignment": "Left aligned text, 3D/Abstract visual right",
+      "spacing": "py-24 md:py-32"
+    }
+  },
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1715614176939-f5c46ae99d04?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "Futuristic dark city pier",
+      "usage": "Landing page hero background with heavy overlay (bg-black/80)"
+    },
+    "auth_background": {
+      "url": "https://images.unsplash.com/photo-1706005024051-25bf89ab9d41?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "Abstract frosted glass blue",
+      "usage": "Split screen auth page, right side image"
+    },
+    "feature_abstract": {
+      "url": "https://images.unsplash.com/photo-1651499833076-4caeb8324708?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "Abstract blue data flow",
+      "usage": "Background for 'How it works' or 'Features' cards"
+    },
+    "tech_filler": {
+      "url": "https://images.unsplash.com/photo-1489436969537-cf0c1dc69cba?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "alt": "Dark tech device",
+      "usage": "Generic tech filler if needed"
+    }
+  },
+  "instructions_to_main_agent": {
+    "general": "You are building a high-performance tool for SEOs. The UI must feel fast, dangerous, and precise. Avoid 'friendly' rounded corners. Go for 'tactical' aesthetics.",
+    "css_setup": "Update /app/frontend/src/index.css with the provided Tailwind config colors. Ensure 'dark' class is applied to the root or body by default.",
+    "fonts": "Add the Google Fonts import to /app/frontend/src/index.css or the HTML head.",
+    "kill_score_implementation": "Create a dedicated component for the Kill Score. It should be the most prominent visual element on the Opportunity Details page.",
+    "tables": "Use Shadcn Table component but strip the borders to just row dividers. Use monospace font for all metrics (CPC, Volume, DA).",
+    "animations": "Use 'framer-motion' for entrance animations. Stagger the table rows. Add a 'glitch' effect on hover for the main CTA."
+  },
+  "universal_guidelines": [
+    "Do not use gradients for text unless it's a very subtle shine.",
+    "Always use 'cursor-pointer' on interactive elements.",
+    "Input fields should have a height of at least 48px (h-12) for better touch targets.",
+    "Use 'gap-6' or 'gap-8' for form layouts to avoid clutter.",
+    "Ensure all text has sufficient contrast against the dark background (APCA check)."
+  ]
+}
