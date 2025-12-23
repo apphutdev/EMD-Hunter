@@ -65,15 +65,12 @@ const SERPAnalysis = () => {
     try {
       const response = await axios.post(
         `${API_URL}/api/ai/analyze`,
-        null,
-        { 
-          headers: getAuthHeaders(),
-          params: {
-            keyword,
-            serp_data: JSON.stringify(serpData.results),
-            keyword_data: JSON.stringify({ keyword, search_volume: 500, cpc: 25 })
-          }
-        }
+        {
+          keyword,
+          serp_data: serpData.results,
+          keyword_data: { keyword, search_volume: 500, cpc: 25, competition: 0.5 }
+        },
+        { headers: getAuthHeaders() }
       );
       setAiAnalysis(response.data.analysis);
       if (response.data.source === 'error') {
